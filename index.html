@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bug report form</title>
+  <style>
+    .put-form-here {
+      width: 300px;
+      position: absolute;
+      right: 10px;
+      bottom: 0;
+    }
+    .siteform {
+      width: 400px;
+      margin: 0 auto;
+    }
+    hr {
+      margin: 100px auto;
+    }
+    .siteform input,
+    .siteform textarea {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="put-form-here"></div>
+
+
+  <form action="" class="siteform" id="siteform" name="siteform_name">
+    <p>Пользовательская форма  сайта</p>
+    <input type="text" name="username">
+    <textarea name="textarea" cols="30" rows="10"></textarea>
+    <button>Отправить</button>
+  </form>
+
+  <hr>
+
+  <script src="dist/bug-report.js"></script>
+  <script>
+    const bugreport = BugReport.init();
+
+    // default 
+    bugreport.createCustomForm();
+
+    // in selector
+    // bugreport.createCustomForm('.put-form-here');
+
+    const siteform = document.querySelector('#siteform'); 
+    siteform.addEventListener('submit', (e) => {
+      bugreport.sendSiteform(siteform);
+      e.preventDefault();
+    })
+    
+  </script>
+</body>
+</html>

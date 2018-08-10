@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Bug report form</title>
+  <script type='text/javascript' src="dist/bug-report.js"></script>
+</head>
+<body>
+  <h2>Test bug report</h2>
+
+  <div class="put-form-here" style="width: 300px; position: absolute; right: 10px; top: 0;" ></div>
+
+  
+  <script>
+    const bugz = BugReport.init()
+    bugz.createCustomForm('.put-form-here')
+  </script>
+
+</body>
+</html>
